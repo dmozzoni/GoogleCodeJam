@@ -1,3 +1,7 @@
+# https://code.google.com/codejam/contest/6254486/dashboard#s=p2
+# passes both
+
+
 def checkprime(p)
   # not a true check of primality
   # but true check using Ruby Prime class was too slow

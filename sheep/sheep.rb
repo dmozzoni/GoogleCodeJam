@@ -1,3 +1,7 @@
+# https://code.google.com/codejam/contest/6254486/dashboard#s=p0
+# passes both
+
+
 def sheep(n)
   return 'INSOMNIA' if n.zero?
   h = Array.new(10).fill(false)

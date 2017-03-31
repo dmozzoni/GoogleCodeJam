@@ -1,7 +1,7 @@
-#
+# https://code.google.com/codejam/contest/6254486/dashboard#s=p3
 #
 # Brute force approach, seems to work for small inputs, but
-# quickly runs out of memory (probably in the k>20 range) and so fails
+# quickly runs out of memory (probably in the k>20 range) and so fails both
 #
 #
 #
