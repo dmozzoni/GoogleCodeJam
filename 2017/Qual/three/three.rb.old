@@ -1,0 +1,123 @@
+#
+# GoogleJam 2017 Qual C
+#
+
+def three(n, k)
+  return [0,0] if n == k
+  t = [n]
+  # a = Array.new(n,0).push(1).unshift(1)
+  # puts t.to_s
+  while k > 0
+    m = t.max
+    ii = t.index(m)
+    t.delete_at(ii)
+    v = m / 2
+    if m.odd?
+      t.push(v).push(v)
+    else
+      t.push(v).push(v - 1)
+    end
+    # puts t.to_s
+    # puts k if t[-1] == 0 and t[-2] == 0
+    break if t[-1] == 0 and t[-2] == 0
+    k -= 1
+  end
+
+  return t.last(2)
+  # return t
+end
+
+
+
+
+
+def three3(n, k)
+  return [0,0] if n == k
+
+  p2 = (0..60).map{|i| 2**i }
+  kii = p2.index{|e| e > n }
+
+  tmp = p2[kii-1] + p2[kii-2]/2
+
+  return [0,0] if n > tmp and k > p2[kii-1]
+
+
+
+  t = [n]
+  # a = Array.new(n,0).push(1).unshift(1)
+  # puts t.to_s
+  while k > 0
+    m = t.max
+    ii = t.index(m)
+    t.delete_at(ii)
+    v = m / 2
+    if m.odd?
+      t.push(v).push(v)
+    else
+      t.push(v).push(v - 1)
+    end
+    # puts t.to_s
+    # puts k if t[-1] == 0 and t[-2] == 0
+    break if t[-1] == 0 and t[-2] == 0
+    k -= 1
+  end
+
+  return t.last(2)
+  # return t
+end
+
+
+
+
+
+
+
+
+def tt(n, k)
+
+p2 = (0..60).map{|i| 2**i }
+
+end
+
+
+
+
+
+
+def thr()
+
+
+for i in (1..1000)
+for j in (1..i)
+
+a = three(i,j)
+puts "#{i} #{j} #{i-j}" if a.all? { |e| e==0 }
+break if a.all? { |e| e==0 }
+
+end
+end
+  return nil
+end
+
+
+
+
+
+
+def drive(filename)
+  fout = File.new(filename + '.out', 'w+')
+  File.open(filename) do |fin|
+    fin.gets
+    loop do
+      break unless line = fin.gets
+      line = line.split (' ')
+      fout.puts "Case ##{fin.lineno - 1}: #{three(line[0].to_i,line[1].to_i)}"
+    end
+  end
+  fout.close
+end
+
+
+# drive('C-large-practice.in')
+# drive('C-small-practice.in')
+drive('test.in')
